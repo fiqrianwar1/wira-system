@@ -1,0 +1,1 @@
+<img src="{{ asset('images/logo-wira.png') }}" {{ $attributes }} alt="Logo Wira Toyota">
