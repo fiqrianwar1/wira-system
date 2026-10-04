@@ -9,6 +9,18 @@ Dibangun dengan **Laravel 12** sehingga seluruh proses perbaikan kendaraan — d
 ## 📋 Daftar Isi
 
 - [Tampilan Aplikasi](#-tampilan-aplikasi)
+  - [Halaman Publik & Autentikasi](#1-halaman-publik--autentikasi)
+  - [Dashboard Service Advisor](#2-dashboard-service-advisor)
+  - [Manajemen Work Order (SPK)](#3-manajemen-work-order-spk)
+  - [Master Data Customer & Kendaraan](#4-master-data-customer--kendaraan)
+  - [Tracking Sparepart & Klaim Garansi](#5-tracking-sparepart--klaim-garansi)
+  - [Dashboard Foreman](#6-dashboard-foreman)
+  - [Progres & Job Sheet (Foreman)](#7-progres--job-sheet-foreman)
+  - [Manajemen SDM Produksi (Foreman)](#8-manajemen-sdm-produksi-foreman)
+  - [Gudang Sparepart](#9-gudang-sparepart)
+  - [Gudang Bahan](#10-gudang-bahan)
+  - [Portal Customer](#11-portal-customer)
+  - [Layar TV Bengkel](#12-layar-tv-bengkel)
 - [Fitur Utama](#-fitur-utama)
 - [Hak Akses (Role)](#-hak-akses-role)
 - [Teknologi](#-teknologi)
@@ -22,30 +34,157 @@ Dibangun dengan **Laravel 12** sehingga seluruh proses perbaikan kendaraan — d
 
 ## 📸 Tampilan Aplikasi
 
-### 1. Dashboard Service Advisor
+Berikut tangkapan layar fitur-fitur unggulan **Wira System**, dikelompokkan sesuai peran pengguna dan alur kerjanya.
+
+### 1. Halaman Publik & Autentikasi
+
+**Landing Page** — Perkenalan layanan body & paint PT. Wira Megah Profitamas Banjarmasin.
+
+![Landing Page](docs/screenshots/landing-page.png)
+
+**Login** — Satu pintu masuk untuk semua role (SA, Foreman, Gudang, Customer).
+
+![Login](docs/screenshots/login.png)
+
+**Registrasi Customer** — Pelanggan bisa mendaftar akun sendiri untuk memantau progres perbaikan.
+
+![Registrasi Customer](docs/screenshots/register.png)
+
+### 2. Dashboard Service Advisor
+
 Ringkasan Work Order, unit yang sedang diproses, omzet bulanan, dan komplain customer yang butuh tindakan.
 
 ![Dashboard Service Advisor](docs/screenshots/dashboard-service-advisor.png)
 
-### 2. Foreman Control Center
-Monitoring progres pengerjaan per unit, plot mekanik, dan absensi harian tim produksi.
+### 3. Manajemen Work Order (SPK)
+
+**Daftar SPK** — Monitoring seluruh Work Order beserta status pengerjaan, teknisi (PIC), dan estimasi selesai.
+
+![Daftar Work Order](docs/screenshots/sa-work-orders.png)
+
+**Buat SPK Baru** — Input data kendaraan, keluhan customer, tipe perbaikan (Regular / Quick Repair), dan estimasi biaya.
+
+![Buat Work Order](docs/screenshots/sa-work-order-create.png)
+
+**Detail SPK** — Progres per panel (Preparation → Paint → Poles → Washing), riwayat servis, dan cetak SPK.
+
+![Detail Work Order](docs/screenshots/sa-work-order-detail.png)
+
+### 4. Master Data Customer & Kendaraan
+
+**Data Customer** — Master pelanggan beserta kontak dan riwayat kendaraannya.
+
+![Data Customer](docs/screenshots/sa-customers.png)
+
+**Data Kendaraan** — Master unit (Toyota, Honda, dll.) lengkap dengan nomor polisi dan pemiliknya.
+
+![Data Kendaraan](docs/screenshots/sa-vehicles.png)
+
+### 5. Tracking Sparepart & Klaim Garansi
+
+**Tracking Sparepart** — Pantauan real-time status pemesanan part dari Gudang (read-only untuk SA).
+
+![Tracking Sparepart](docs/screenshots/sa-tracking-sparepart.png)
+
+**Klaim Garansi / Komplain** — Pencatatan dan penanganan komplain customer.
+
+![Klaim Garansi](docs/screenshots/sa-complaints.png)
+
+### 6. Dashboard Foreman
+
+Control center produksi: monitoring progres tiap unit, plot mekanik, dan status tahapan pengerjaan.
 
 ![Dashboard Foreman](docs/screenshots/dashboard-foreman.png)
 
-### 3. Logistik Control Center — Gudang Sparepart
-Pantauan stok part (bumper, kaca, kap mesin), status pemesanan (OTW / Ready), dan Purchase Order.
+---
+
+### 7. Progres & Job Sheet (Foreman)
+
+**Progres Pengerjaan** — Papan monitoring tahapan tiap unit di lantai produksi.
+
+![Progres Pengerjaan](docs/screenshots/foreman-progress.png)
+
+**Update Progres** — Form plot tugas ke mekanik/leader per panel dan update status tahapan.
+
+![Update Progres](docs/screenshots/foreman-progress-edit.png)
+
+### 8. Manajemen SDM Produksi (Foreman)
+
+**Data Mekanik** — Master teknisi beserta spesialisasi (Body, Preparation, Paint, Poles, Washing).
+
+![Data Mekanik](docs/screenshots/foreman-mekanik.png)
+
+**Data Kehadiran** — Absensi harian tim produksi.
+
+![Data Kehadiran](docs/screenshots/foreman-absensi.png)
+
+**Rekap Kinerja** — Laporan bulanan jumlah tahapan yang diselesaikan tiap teknisi, dapat dicetak.
+
+![Rekap Kinerja](docs/screenshots/foreman-rekap.png)
+
+### 9. Gudang Sparepart
+
+**Dashboard Gudang Sparepart** — Pantauan stok part (bumper, kaca, kap mesin), status pemesanan (OTW / Ready), dan Purchase Order.
 
 ![Dashboard Gudang Sparepart](docs/screenshots/dashboard-gudang-sparepart.png)
 
-### 4. Material Control — Gudang Bahan
-Kontrol stok bahan (cat, thinner, pernis), pemakaian bahan per SPK, dan nota pembelian supplier.
+**Stok Sparepart** — Daftar seluruh part beserta stok, harga, dan lokasi rak.
+
+![Stok Sparepart](docs/screenshots/sparepart-stocks.png)
+
+**Tambah Stok Sparepart** — Input part baru ke gudang.
+
+![Tambah Stok Sparepart](docs/screenshots/sparepart-stocks-create.png)
+
+**Purchase Order** — Pembuatan PO ke supplier beserta status kedatangan barang.
+
+![Purchase Order](docs/screenshots/sparepart-purchases.png)
+
+**Rekap Purchase Order** — Rekapitulasi PO dan cetak nota.
+
+![Rekap Purchase Order](docs/screenshots/sparepart-purchases-recap.png)
+
+### 10. Gudang Bahan
+
+**Dashboard Gudang Bahan** — Kontrol stok bahan (cat, thinner, pernis) dan nota pembelian supplier.
 
 ![Dashboard Gudang Bahan](docs/screenshots/dashboard-gudang-bahan.png)
 
-### 5. Portal Customer
-Pelanggan login sendiri untuk memantau progres perbaikan mobilnya secara real-time, tanpa harus datang ke bengkel.
+**Stok Bahan** — Daftar bahan cair beserta kuantitas dan satuannya.
+
+![Stok Bahan](docs/screenshots/bahan-stoks.png)
+
+**Tambah Stok Bahan** — Input bahan baru ke gudang.
+
+![Tambah Stok Bahan](docs/screenshots/bahan-stok-create.png)
+
+**Pemakaian Bahan per SPK** — Pencatatan bahan yang dipakai tiap SPK beserta nota foto, dapat dicetak.
+
+![Pemakaian Bahan per SPK](docs/screenshots/bahan-spk.png)
+
+### 11. Portal Customer
+
+**Dashboard Customer** — Pelanggan memantau progres perbaikan mobilnya sendiri secara real-time.
 
 ![Portal Customer](docs/screenshots/portal-customer.png)
+
+**Riwayat Servis** — Histori perbaikan kendaraan yang sudah selesai.
+
+![Riwayat Servis](docs/screenshots/customer-history.png)
+
+**Sparepart Terpakai** — Daftar part yang dipakai di kendaraan customer.
+
+![Sparepart Terpakai](docs/screenshots/customer-spareparts.png)
+
+**Komplain & Garansi** — Pengajuan komplain/klaim garansi langsung dari portal.
+
+![Komplain Customer](docs/screenshots/customer-complaints.png)
+
+### 12. Layar TV Bengkel
+
+**Body & Paint Live Center** — Mode tampilan full screen untuk TV ruang tunggu, menampilkan posisi semua unit di lantai bengkel beserta progresnya.
+
+![Layar TV Bengkel](docs/screenshots/customer-tv.png)
 
 ---
 
